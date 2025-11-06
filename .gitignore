@@ -186,3 +186,5 @@ cython_debug/
 /backend/__pycache__
 *.pyc
 /backend/__pycache__
+kanopy/*
+kanopy
