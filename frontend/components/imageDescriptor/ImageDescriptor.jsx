@@ -80,7 +80,9 @@ const ImageDescriptor = () => {
     }
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_IMAGE_DESCRIPTOR_API_URL, {
+      // Use local Next.js API route instead of direct backend call
+      // This avoids SSO authentication issues in Kanopy deployment
+      const response = await fetch("/api/image-descriptor", {
         method: "POST",
         body: formData,
       });
@@ -129,7 +131,9 @@ const ImageDescriptor = () => {
 
   const runAgent = async () => {
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_RUN_AGENT_API_URL, {
+      // Use local Next.js API route instead of direct backend call
+      // This avoids SSO authentication issues in Kanopy deployment
+      const response = await fetch("/api/run-agent", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
